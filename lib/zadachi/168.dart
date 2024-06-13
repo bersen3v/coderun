@@ -9,6 +9,14 @@ List<List<int>> read() {
       .toList();
 }
 
+List<List<int>> read2() {
+  File myFile = File("input.txt");
+  List<String> content = myFile.readAsLinesSync();
+  return content
+      .map((e) => e.split(' ').map((num) => int.parse(num)).toList())
+      .toList();
+}
+
 void main() {
   List<List<int>> content = read();
   List<int> dospehi = content[1];
